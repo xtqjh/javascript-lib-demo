@@ -1,0 +1,51 @@
+{
+  "name": "fok-utils",
+  "version": "0.1.5",
+  "description": "前端项目的js函数库",
+  "type": "module",
+  "main": "./dist/fokUtils.cjs",
+  "module": "./fokUtils.esm.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/fokUtils.cjs",
+      "import": "./dist/fokUtils.esm.mjs"
+    },
+    "./*": "./*",
+    "./webpack": {
+      "require": "./dist/fokUtils.cjs",
+      "import": "./dist/fokUtils.esm.mjs"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major",
+    "b": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.config.js",
+    "publish": "npm publish",
+    "n": "yarn b && yarn p commit && yarn patch",
+    "p": "zx build/push.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/plugin-transform-runtime": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "esm": "^3.2.25",
+    "rollup": "^3.19.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "zx": "7.2.0"
+  },
+  "dependencies": {},
+  "keywords": [
+    "函数库",
+    "js",
+    "前端"
+  ],
+  "author": "fok.zhangzhao",
+  "license": "MIT"
+}
